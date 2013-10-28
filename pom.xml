@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.tenderowls.opensource.haxemojos</groupId>
+        <artifactId>forge</artifactId>
+        <version>1.0.1</version>
+    </parent>
+
+    <groupId>com.github.fljot</groupId>
+    <artifactId>touch-scrolling</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>har</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.tenderowls.opensource</groupId>
+                <artifactId>haxemojos-maven-plugin</artifactId>
+                <configuration>
+                    <targets>
+                        <target>swf</target>
+                    </targets>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>haxemojos-public-repository</id>
+            <url>http://repo.haxemojos.org/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>yelbota-dropbox-repo</id>
+            <url>http://dl.dropbox.com/u/36020926/maven/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>haxemojos-nexus-snapshots</id>
+            <url>http://repo.haxemojos.org/content/repositories/snapshots</url>
+        </repository>
+    </distributionManagement>
+
+</project>

@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+
+*.ipr
+*.iws
+*.iml
+
+*.hxproj
+
+out
+target
+
+/client/bin
+/client/assets
+/client/level
