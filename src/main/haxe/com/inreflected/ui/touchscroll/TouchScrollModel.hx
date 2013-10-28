@@ -530,8 +530,6 @@ class TouchScrollModel
             _measuredScrollBounds.width = Math.max(0, _contentWidth - _viewportWidth);
             _measuredScrollBounds.height = Math.max(0, _contentHeight - _viewportHeight);
         }
-
-        trace("_measuredScrollBounds.top=" + _measuredScrollBounds.top);
     }
 
     function invalidateScrollBounds():Void
@@ -562,14 +560,12 @@ class TouchScrollModel
         }
         if (_positionY < scrollBounds.top)
         {
-            trace("scrollBounds.top=" + scrollBounds.top);
             _positionY = scrollBounds.top;
             changed = true;
         }
 
         else if (_positionY > scrollBounds.bottom)
         {
-            trace("scrollBounds.bottom=" + scrollBounds.bottom);
             _positionY = scrollBounds.bottom;
             changed = true;
         }
@@ -663,7 +659,6 @@ class TouchScrollModel
             changed = true;
         }
         pos = getSnappedPosition(_positionY, _viewportHeight, scrollBounds.top, scrollBounds.bottom);
-        trace("getSnappedPosition(" + _positionY + ", " + _viewportHeight + ", " + scrollBounds.top + ", " + scrollBounds.bottom + ");");
         if (_positionY != pos)
         {
             _positionY = pos;
@@ -769,9 +764,7 @@ class TouchScrollModel
                         pullProgress = pullOffset < (viewportSize) ? pullOffset / viewportSize : 1;
                         pullProgress = Math.min(
                             (maxPull != 0 ? maxPull : MAX_PULL_FACTOR) * (1 - Math.pow(1 - pullProgress, PULL_TENSION_FACTOR)), pullProgress);
-                        trace("maxPull"+maxPull);
                         newVSP = scrollBounds.top - viewportSize * pullProgress;
-                        trace("1. newVSP=" + newVSP);
                     }
                     else
                     {
@@ -783,12 +776,10 @@ class TouchScrollModel
                         pullProgress = pullOffset < (viewportSize) ? pullOffset / viewportSize : 1;
                         pullProgress = Math.min((maxPull != 0 ? maxPull : MAX_PULL_FACTOR) * (1 - Math.pow(1 - pullProgress, PULL_TENSION_FACTOR)), pullProgress);
                         newVSP = scrollBounds.bottom + viewportSize * pullProgress;
-                        trace("2. newVSP=" + newVSP);
                     }
                 }
                 else
                 {
-                    trace("3. newVSP=" + newVSP);
                     newVSP = newVSP < (scrollBounds.top) ? scrollBounds.top : scrollBounds.bottom;
                 }
 
@@ -869,7 +860,6 @@ class TouchScrollModel
         _throwEffect.startingVelocityX = velocityX;
         _throwEffect.startingVelocityY = velocityY;
         _throwEffect.startingPositionX = _positionX;
-        trace("ollready null" + _positionY);
         _throwEffect.startingPositionY = _positionY;
         _throwEffect.minPositionX = minX;
         _throwEffect.minPositionY = minY;
